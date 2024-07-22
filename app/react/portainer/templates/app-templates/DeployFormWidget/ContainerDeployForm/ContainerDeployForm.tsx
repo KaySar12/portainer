@@ -80,6 +80,7 @@ export function ContainerDeployForm({
         <Form className="form-horizontal">
           <FormSection title="Configuration">
             <NameField
+              value={values.name}
               placeholder={values.name}
               onChange={(v) => setFieldValue('name', v)}
               error={errors.name}
