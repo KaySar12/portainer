@@ -99,13 +99,11 @@ export function DockerSidebar({ environmentId, environment }: Props) {
         />
       </SidebarParent> */}
       <SidebarItem
+        to="docker.templates"
+        params={{ endpointId: environmentId }}
         icon={Edit}
         label="Application"
-        to="docker.templates"
-        ignorePaths={['docker.templates.custom']}
-        params={{ endpointId: environmentId }}
-        isSubMenu
-        data-cy="portainerSidebar-appTemplates"
+        data-cy="dockerSidebar-templates"
       />
       {areStacksVisible && (
         <SidebarItem

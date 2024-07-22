@@ -1190,6 +1190,7 @@ type (
 		RestartPolicy string `json:"restart_policy,omitempty" example:"on-failure"`
 		// Container hostname
 		Hostname string `json:"hostname,omitempty" example:"mycontainer"`
+
 	}
 
 	// TemplateEnv represents a template environment(endpoint) variable configuration

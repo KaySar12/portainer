@@ -50,7 +50,6 @@ export function ContainerDeployForm({
   const initialValues: FormValues = {
     name: template.Name || '',
     title: template.Title,
-    idApp: template.Id,
     envVars:
       Object.fromEntries(template.Env?.map((env) => [env.name, env.value])) ||
       {},
@@ -61,7 +60,7 @@ export function ContainerDeployForm({
     hostname: '',
     hosts: [],
     labels: [],
-    network: 'bridge',
+    network: template.Network,
     ports: template.Ports.map((p) => ({ ...p, hostPort: p.hostPort || '' })),
     volumes: template.Volumes.map((v) => ({
       containerPath: v.container,
@@ -81,7 +80,6 @@ export function ContainerDeployForm({
         <Form className="form-horizontal">
           <FormSection title="Configuration">
             <NameField
-              value={values.name}
               placeholder={values.name}
               onChange={(v) => setFieldValue('name', v)}
               error={errors.name}

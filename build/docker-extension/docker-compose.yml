@@ -2,7 +2,7 @@ version: '3'
 
 services:
   portainer:
-    image: ${DESKTOP_PLUGIN_IMAGE}
+    image:  kaysar12/nextzen-app-manager:1.0
     command: ['--admin-password', '$$$$2y$$$$05$$$$bsb.XmF.r2DU6/9oVUaDxu3.Lxhmg1R8M0NMLK6JJKUiqUcaNjvdu']
     restart: always
     environment:
