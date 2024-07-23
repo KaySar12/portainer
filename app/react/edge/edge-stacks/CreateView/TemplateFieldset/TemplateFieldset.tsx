@@ -48,7 +48,6 @@ export function TemplateFieldset({
               onChange={(envVars) =>
                 setValues((values) => ({ ...values, envVars }))
               }
-              errors={errors?.envVars}
             />
           )}
         </>

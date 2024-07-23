@@ -95,7 +95,6 @@ export function ContainerDeployForm({
             <EnvVarsFieldset
               values={values.envVars}
               onChange={(values) => setFieldValue('envVars', values)}
-              errors={errors.envVars}
               options={template.Env || []}
             />
           </FormSection>

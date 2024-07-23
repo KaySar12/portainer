@@ -14,12 +14,10 @@ export function EnvVarsFieldset({
   onChange,
   options,
   values,
-  errors,
 }: {
   options: Array<TemplateEnv>;
   onChange: (value: Value) => void;
   values: Value;
-  errors?: FormikErrors<Value>;
 }) {
   return (
     <>
@@ -29,7 +27,6 @@ export function EnvVarsFieldset({
           option={env}
           value={values[env.name]}
           onChange={(value) => handleChange(env.name, value)}
-          errors={errors?.[env.name]}
         />
       ))}
     </>

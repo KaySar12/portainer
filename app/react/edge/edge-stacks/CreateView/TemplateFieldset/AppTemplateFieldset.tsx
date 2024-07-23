@@ -1,5 +1,3 @@
-import { FormikErrors } from 'formik';
-
 import { TemplateViewModel } from '@/react/portainer/templates/app-templates/view-model';
 import { useAppTemplate } from '@/react/portainer/templates/app-templates/queries/useAppTemplates';
 import { TemplateNote } from '@/react/portainer/templates/components/TemplateNote';
@@ -12,12 +10,10 @@ export function AppTemplateFieldset({
   templateId,
   values,
   onChange,
-  errors,
 }: {
   templateId: TemplateViewModel['Id'];
   values: EnvVarsValue;
   onChange: (value: EnvVarsValue) => void;
-  errors?: FormikErrors<EnvVarsValue>;
 }) {
   const templateQuery = useAppTemplate(templateId);
   if (!templateQuery.data) {
@@ -33,7 +29,6 @@ export function AppTemplateFieldset({
         options={template.Env || []}
         values={values}
         onChange={onChange}
-        errors={errors}
       />
     </>
   );

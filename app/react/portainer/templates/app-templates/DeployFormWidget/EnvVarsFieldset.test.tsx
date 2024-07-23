@@ -21,7 +21,6 @@ test('renders EnvVarsFieldset component', () => {
       onChange={onChange}
       options={[...options]}
       values={value}
-      errors={{}}
     />
   );
 
@@ -41,12 +40,7 @@ test('calls onChange when input value changes', async () => {
   const value = { VAR1: 'Value 1' };
 
   render(
-    <EnvVarsFieldset
-      onChange={onChange}
-      options={options}
-      values={value}
-      errors={{}}
-    />
+    <EnvVarsFieldset onChange={onChange} options={options} values={value} />
   );
 
   const inputElement = screen.getByDisplayValue(value.VAR1);
@@ -64,12 +58,7 @@ test('renders error message when there are errors', () => {
   const value = { VAR1: '' };
 
   render(
-    <EnvVarsFieldset
-      onChange={onChange}
-      options={options}
-      values={value}
-      errors={{ VAR1: 'Required' }}
-    />
+    <EnvVarsFieldset onChange={onChange} options={options} values={value} />
   );
 
   const errorElement = screen.getByText('Required');
