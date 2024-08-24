@@ -174,14 +174,14 @@ export function SettingsSidebar({ isPureAdmin, isAdmin, isTeamLeader }: Props) {
             ]}
             data-cy="portainerSidebar-generalSettings"
           />
-          {/* {!window.ddExtension && (
+          {!window.ddExtension && (
             <SidebarItem
               to="portainer.settings.authentication"
               label="Authentication"
               isSubMenu
               data-cy="portainerSidebar-authentication"
             />
-          )} */}
+          )}
           {/* {isBE && (
             <SidebarItem
               to="portainer.settings.sharedcredentials"
